@@ -6,19 +6,25 @@
 
 <img src="spotify_logo.jpg" alt="Spotify Logo" width="1000"/>
 
-This project is an **advanced SQL-based data analysis** on a real-world **Spotify music dataset**, designed to demonstrate strong proficiency in **SQL querying, data exploration, analytical thinking, and window functions**.
 
-The dataset captures detailed information about songs, artists, albums, audio features, engagement metrics, and streaming platforms. Using this data, the project performs **Exploratory Data Analysis (EDA)** and **complex analytical queries** to extract meaningful business and musical insights.
+This project analyzes Spotify's Top 50 songs dataset using SQL and Python to uncover trends in artist popularity, album types, explicit content, and song characteristics.
 
-This project is structured to reflect **industry-level SQL practices**, including:
-- Clean schema design
-- Aggregations and filtering
-- Subqueries and Common Table Expressions (CTEs)
-- Window functions for ranking and partitioned analysis
-- Platform comparison (Spotify vs YouTube)
-- Feature-based song analysis
+---
+## 🛠️ Tools & Technologies
 
-The goal is to simulate how a **Data Analyst / Data Engineer** would work with a production-style music analytics database.
+- Python
+- Jupyter Notebook
+- Pandas
+- Matplotlib
+- SQL (MySQL)
+- Git
+- GitHub
+
+
+---
+
+## 📊 Dataset
+...
 
 ---
 
