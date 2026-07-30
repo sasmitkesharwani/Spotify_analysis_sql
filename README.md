@@ -1,338 +1,166 @@
-# 🎧 Advanced SQL Project – Spotify Data Analysis
+# 🎧Spotify-Streaming-Analytics
 
 ---
+
+# 🎵 Spotify End-to-End Streaming Analytics & Business Insights
 
 ## 📌 Project Overview
 
-<img src="spotify_logo.jpg" alt="Spotify Logo" width="1000"/>
+This project presents an end-to-end data analytics workflow on Spotify streaming data using Python and SQL. The objective is to analyze artist performance, streaming trends, audience engagement, and song characteristics to generate actionable business insights and support data-driven decision-making.
 
-
-This project analyzes Spotify's Top 50 songs dataset using SQL and Python to uncover trends in artist popularity, album types, explicit content, and song characteristics.
+The project integrates data cleaning, preprocessing, exploratory data analysis (EDA), SQL-based business analysis, and data visualization to uncover meaningful patterns from Spotify streaming data.
 
 ---
-## 🛠️ Tools & Technologies
 
-- Python
-- Jupyter Notebook
+## 🎯 Business Problem
+
+Music streaming platforms generate large amounts of user listening data every day. Understanding artist performance, audience engagement, and streaming trends helps businesses optimize content strategy, improve user experience, and make informed business decisions.
+
+This project aims to answer key business questions such as:
+
+- Which artists have the highest streaming performance?
+- Which albums generate the highest engagement?
+- Which songs have crossed one billion streams?
+- Which platforms contribute the most streams?
+- Which audio features are associated with popular songs?
+
+---
+
+## 🛠 Tech Stack
+
+- **Programming Language:** Python
+- **Libraries:** Pandas, NumPy, Matplotlib
+- **Database:** MySQL
+- **Query Language:** SQL
+- **Development Environment:** Jupyter Notebook
+- **Version Control:** Git & GitHub
+
+---
+
+## 📂 Dataset
+
+- **Dataset:** Spotify Streaming Dataset
+- **Format:** CSV
+- **Database:** Imported into MySQL for SQL analysis
+
+---
+
+## 🔄 Project Workflow
+
+```text
+Spotify Dataset (CSV)
+          │
+          ▼
+Data Cleaning & Preprocessing
+(Python + Pandas)
+          │
+          ▼
+Exploratory Data Analysis (EDA)
+          │
+          ▼
+Data Import into MySQL
+          │
+          ▼
+SQL Business Analysis
+          │
+          ▼
+Business Insights & Recommendations
+```
+
+---
+
+## 📊 Analysis Performed
+
+### Data Cleaning & Preprocessing
+
+- Removed missing values
+- Checked duplicate records
+- Corrected inconsistent values
+- Converted data types
+- Prepared dataset for analysis
+
+### Exploratory Data Analysis (EDA)
+
+- Artist performance analysis
+- Album performance analysis
+- Streaming trend analysis
+- Platform-wise comparison
+- Audio feature analysis
+- Listener engagement analysis
+
+### SQL Business Analysis
+
+- Top-performing artists
+- Album performance ranking
+- Most streamed songs
+- Songs with over one billion streams
+- Platform-wise stream comparison
+- Window function analysis
+- Aggregate business analysis
+- Business-oriented SQL queries
+
+---
+
+## 💡 Key Business Insights
+
+- Identified top-performing artists based on total streams.
+- Compared streaming performance across multiple platforms.
+- Analyzed listener engagement using key audio features.
+- Ranked artists and tracks using SQL window functions.
+- Identified high-performing albums and popular song characteristics.
+- Generated actionable business insights to support strategic decision-making.
+
+---
+
+## 🚀 Skills Demonstrated
+
+- Python Programming
+- Data Cleaning
+- Data Preprocessing
+- Exploratory Data Analysis (EDA)
+- SQL
+- MySQL
 - Pandas
+- NumPy
 - Matplotlib
-- SQL (MySQL)
-- Git
-- GitHub
-
-
----
-
-## 📊 Dataset
-...
+- Business Analytics
+- Data Visualization
+- Business Insight Generation
 
 ---
 
-## 🗂️ Dataset Description
+## 📁 Repository Structure
 
-The Spotify dataset contains:
-- Artist and track metadata
-- Album information and release types
-- Audio features such as energy, danceability, valence, tempo
-- Engagement metrics like views, likes, comments
-- Streaming statistics across platforms
-- Licensing and official video indicators
-
-This rich structure allows both **descriptive analysis** and **advanced analytical queries**.
-
----
-
-## 🧱 Database Schema
-
-```sql
-DROP TABLE IF EXISTS spotify;
-
-CREATE TABLE spotify (
-    artist VARCHAR(255),
-    track VARCHAR(255),
-    album VARCHAR(255),
-    album_type VARCHAR(50),
-    danceability FLOAT,
-    energy FLOAT,
-    loudness FLOAT,
-    speechiness FLOAT,
-    acousticness FLOAT,
-    instrumentalness FLOAT,
-    liveness FLOAT,
-    valence FLOAT,
-    tempo FLOAT,
-    duration_min FLOAT,
-    title VARCHAR(255),
-    channel VARCHAR(255),
-    views FLOAT,
-    likes BIGINT,
-    comments BIGINT,
-    licensed BOOLEAN,
-    official_video BOOLEAN,
-    stream BIGINT,
-    energy_liveness FLOAT,
-    most_played_on VARCHAR(50)
-);
+```
+Spotify-Streaming-Analytics
+│
+├── spotify_analysis.ipynb
+├── analysisquery.sql
+├── schema.sql
+├── spotify-top-50-world.csv
+├── README.md
 ```
 
 ---
 
-## 🛠️ Skills Demonstrated
+## 📈 Future Improvements
 
-- Advanced SQL querying  
-- Data cleaning and validation  
-- Aggregations and grouping  
-- Conditional logic using CASE statements  
-- Window functions (`DENSE_RANK`)  
-- CTEs (`WITH` clause)  
-- Platform-wise performance comparison  
-- Analytical problem solving  
+- Build an interactive Power BI dashboard.
+- Develop a Streamlit web application.
+- Perform predictive analytics using Machine Learning.
+- Automate the complete ETL pipeline.
 
 ---
 
-## 🎯 Project Objective
+## 📌 Conclusion
 
-To analyze Spotify music data and answer **real-world analytical questions**, such as:
-- Artist and track performance
-- Popularity and engagement trends
-- Audio feature comparisons
-- Platform dominance (Spotify vs YouTube)
-- Ranking and segmentation analysis
-
-This project is suitable for showcasing **SQL expertise** in:
-- Data Analyst roles
-- Business Intelligence roles
-- Entry-level Data Engineering roles
+This project demonstrates an end-to-end data analytics workflow by integrating Python and SQL to transform raw Spotify streaming data into meaningful business insights. It highlights practical skills in data preprocessing, exploratory data analysis, database querying, visualization, and business-oriented decision support.
 
 ---
 
+## 👨‍💻 Author
 
+**Sasmit Kesharwani**
 
-# 🎧 Spotify SQL Data Analysis Project
-
----
-
-## How many rows are in the table?
-```sql
-SELECT COUNT(*) FROM spotify;
-```
-
-## How many albums are there?
-```sql
-SELECT COUNT(DISTINCT album) FROM spotify;
-```
-
-## How many artists are there?
-```sql
-SELECT COUNT(DISTINCT artist) FROM spotify;
-```
-
-## How many types of albums are there?
-```sql
-SELECT DISTINCT album_type FROM spotify;
-```
-
-## Find maximum and minimum song duration
-```sql
-SELECT MAX(duration_min) FROM spotify;
-SELECT MIN(duration_min) FROM spotify;
-```
-
-## Find songs with zero duration
-```sql
-SELECT * 
-FROM spotify
-WHERE duration_min = 0;
-```
-
-## Delete songs with zero duration
-```sql
-DELETE FROM spotify
-WHERE duration_min = 0;
-```
-
-## How many channels are there?
-```sql
-SELECT DISTINCT channel FROM spotify;
-SELECT COUNT(DISTINCT channel) FROM spotify;
-```
-
-## Most played platforms
-```sql
-SELECT DISTINCT most_played_on FROM spotify;
-```
-
----
-
-## Q1 Retrieve the name of all tracks that have more than 1 billion streams
-```sql
-SELECT track 
-FROM spotify
-WHERE stream > 1000000000;
-```
-
-## Q2 List all the albums along with their respective artists
-```sql
-SELECT DISTINCT album, artist
-FROM spotify
-ORDER BY album;
-```
-
-## Q3 Get the total number of comments for tracks where licensed is TRUE
-```sql
-SELECT SUM(comments) AS total_comments
-FROM spotify
-WHERE licensed = TRUE;
-```
-
-## Q4 Find all tracks that belong to album type SINGLE
-```sql
-SELECT track
-FROM spotify
-WHERE album_type = 'single';
-```
-
-## Q5 Count the total number of tracks by each artist
-```sql
-SELECT artist, COUNT(track) AS total_no_song
-FROM spotify
-GROUP BY artist
-ORDER BY total_no_song;
-```
-
----
-
-## Q6 Calculate the average danceability of each album
-```sql
-SELECT album,
-       AVG(danceability) AS avg_danceability
-FROM spotify
-GROUP BY album
-ORDER BY avg_danceability DESC;
-```
-
-## Q7 Find the top 5 tracks with highest energy
-```sql
-SELECT track, energy
-FROM spotify
-GROUP BY track, energy
-ORDER BY energy DESC
-LIMIT 5;
-```
-
-## Q8 List tracks with total views and likes where official_video is TRUE
-```sql
-SELECT track,
-       SUM(views) AS total_views,
-       SUM(likes) AS total_likes
-FROM spotify
-WHERE official_video = TRUE
-GROUP BY track;
-```
-
-## Q9 Calculate total views for each album and its tracks
-```sql
-SELECT album,
-       track,
-       SUM(views) AS total_views
-FROM spotify
-GROUP BY album, track
-ORDER BY total_views DESC;
-```
-
-## Q10 Retrieve tracks streamed more on Spotify than YouTube
-```sql
-SELECT *
-FROM (
-    SELECT track,
-           COALESCE(SUM(CASE WHEN most_played_on = 'Youtube' THEN stream END), 0) AS streamed_on_youtube,
-           COALESCE(SUM(CASE WHEN most_played_on = 'Spotify' THEN stream END), 0) AS streamed_on_spotify
-    FROM spotify
-    GROUP BY track
-) t
-WHERE streamed_on_spotify > streamed_on_youtube
-  AND streamed_on_youtube <> 0
-ORDER BY streamed_on_spotify DESC
-LIMIT 1;
-```
-
----
-
-## Q11 Find top 3 most viewed tracks for each artist using window function
-```sql
-WITH ranking_artist AS (
-    SELECT artist,
-           track,
-           SUM(views) AS most_viewed,
-           DENSE_RANK() OVER (PARTITION BY artist ORDER BY SUM(views) DESC) AS rank
-    FROM spotify
-    GROUP BY artist, track
-)
-SELECT *
-FROM ranking_artist
-WHERE rank <= 3;
-```
-
-## Q12 Find tracks where liveness is above average
-```sql
-SELECT track, liveness
-FROM spotify
-WHERE liveness > (SELECT AVG(liveness) FROM spotify);
-```
-
-## Q13 Calculate energy difference (max - min) for each album
-```sql
-WITH cte AS (
-    SELECT album,
-           MAX(energy) AS highest_energy,
-           MIN(energy) AS lowest_energy
-    FROM spotify
-    GROUP BY album
-)
-SELECT album,
-       highest_energy - lowest_energy AS energy_diff
-FROM cte;
-```
-
-## Q14 Find top 5 artists based on average popularity having at least 3 songs
-```sql
-WITH ranking_artist AS (
-    SELECT artist,
-           track,
-           SUM(stream) AS most_viewed,
-           DENSE_RANK() OVER (PARTITION BY artist ORDER BY SUM(stream) DESC) AS rank
-    FROM spotify
-    GROUP BY artist, track
-)
-SELECT DISTINCT artist
-FROM ranking_artist
-WHERE rank <= 3
-ORDER BY artist
-LIMIT 5;
-```
-
-## Q15 Identify songs where energy is above average and danceability is below average
-```sql
-SELECT track, artist, energy, danceability
-FROM spotify
-WHERE energy > (SELECT AVG(energy) FROM spotify)
-  AND danceability < (SELECT AVG(danceability) FROM spotify);
-```
-
-## Q16 Classify songs based on duration
-```sql
-SELECT track,
-       duration_min,
-       CASE
-           WHEN duration_min < 3 THEN 'Short'
-           WHEN duration_min > 3 AND duration_min < 4.5 THEN 'Medium'
-           ELSE 'Long'
-       END AS classification_song
-FROM spotify;
-```
-
----
-
----
-
-
+- GitHub: https://github.com/sasmitkesharwani
+- LinkedIn*
