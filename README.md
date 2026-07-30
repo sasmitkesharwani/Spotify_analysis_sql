@@ -1,4 +1,17 @@
 # 🎧Spotify-Streaming-Analytics
+<p align="center">
+  <img src="spotifylogo.png" alt="Spotify Logo" width="180"/>
+</p>
+
+<h1 align="center">🎵 Spotify End-to-End Streaming Analytics & Business Insights</h1>
+
+<p align="center">
+Python • Pandas • NumPy • SQL • MySQL • Business Analytics
+</p>
+
+---
+
+## 📌 Project Overview
 
 ---
 
